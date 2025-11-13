@@ -1,5 +1,6 @@
 import {Tabs} from 'expo-router';
-import Entypo from '@expo/vector-icons/Entypo';
+import {Entypo, Feather, MaterialCommunityIcons} from '@expo/vector-icons';
+
 
 export default function TabsLayout(){
 	return (
@@ -9,7 +10,43 @@ export default function TabsLayout(){
 				options = {{
 					title: 'Home',
 					tabBarIcon: ({color}) => (
-                        <Entypo name="home" size={24} color="black"/>
+                        <Entypo name="home" size={24} color={color}/>
+                    )
+                }}
+			/>
+			<Tabs.Screen
+				name = 'freinds'
+				options = {{
+					title: 'Freinds',
+					tabBarIcon: ({color}) => (
+                        <Feather name="users" size={24} color={color}/>
+                    )
+                }}
+			/>
+            <Tabs.Screen
+				name = 'newPost'
+				options = {{
+					title: 'New Post',
+					tabBarIcon: ({color}) => (
+                        <Feather name="plus-square" size={24} color={color}/>
+                    )
+                }}
+			/>
+			<Tabs.Screen
+				name = 'inbox'
+				options = {{
+					title: 'Inbox',
+					tabBarIcon: ({color}) => (
+                        <MaterialCommunityIcons name="message-minus-outline" size={24} color={color}/>
+                    )
+                }}
+			/>
+			<Tabs.Screen
+				name = 'profile'
+				options = {{
+					title: 'Profile',
+					tabBarIcon: ({color}) => (
+						<Feather name = "user" size = {24} color = {color}/>
                     )
                 }}
 			/>
