@@ -1,10 +1,13 @@
 import {View,Text} from 'react-native';
-import React from 'react';
+import {CameraView, CameraType, useCameraPermessions} from "expo-camera";
+import {useState} from 'react';
 
 export default function NewPostScreen(){
+    const [facing,setFacing] = useState<CameraType>('back');
+	const [permission, requestPermission] = useCameraPermissions();
     return(
         <View>
-            <Text>New Post Screen</Text>
+            <Text style={{color="white"}}>New Post Screen</Text>
         </View>    
 
     )
