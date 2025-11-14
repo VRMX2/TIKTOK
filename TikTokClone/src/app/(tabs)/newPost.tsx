@@ -1,4 +1,4 @@
-import {View, Text, Button,Linking} from 'react-native';
+import {View, Text, Button,Linking,StyleSheet} from 'react-native';
 import {CameraView, CameraType, useCameraPermissions} from "expo-camera";
 import {useState,useEffect} from 'react';
 
@@ -14,9 +14,9 @@ export default function NewPostScreen(){
 
 	if(permission && !permission.granted && !permission.canAskAgain){
 		return (
-			<View>
-				<Text>We need your permission to use the camera</Text>
-                <Button title="Grant Permissions" onPress={()=>Linking.openSettings}/>
+			<View style={styles.permissionContainer}>
+				<Text style={styles.permissionText}>We need your permission to use the camera</Text>
+                <Button title="Grant Permissions" onPress={()=>Linking.openSettings()}/>
             </View>
         )
     }
@@ -29,3 +29,17 @@ export default function NewPostScreen(){
 
     )
 }
+
+const styles = StyleSheet.create({
+	permissionContainer: {
+		flex:1,
+		justifyContent: 'center',
+        padding:20
+    },
+	permissionText: {
+		color: '#fff',
+		textAlign: 'center',
+		fontSize:20,
+		fontWeight: '700'
+	},
+})
