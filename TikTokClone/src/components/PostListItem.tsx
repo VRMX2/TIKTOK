@@ -45,7 +45,7 @@ export default function PostListItem({postItem, isActive}: VideoItemProps) {
         style={{ flex: 1 }}
         player={player} 
         contentFit="cover"
-        nativeControls={false} 
+		// nativeControls = {false}
       />
 
       <View style={styles.interactionBar}>
