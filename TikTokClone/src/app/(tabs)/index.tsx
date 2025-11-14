@@ -1,7 +1,9 @@
 import {View,FlatList, Dimensions, ViewToken} from 'react-native';
 import PostListItem from '@/components/PostListItem';
+import FeedTab from '@/components/GenericComponents/FeedTab';
 import posts from '@assets/data/posts.json';
-import { useRef ,useState} from 'react';
+import { useRef, useState} from 'react';
+import {MaterialIcons,Ionicons} from '@expo/vector-icons';
 
 export default function HomeScreen(){
 	const {height} = Dimensions.get('window');
@@ -13,6 +15,15 @@ export default function HomeScreen(){
 	});
 	return(
 		<View>
+			<View>
+				<MaterialIcons name = "live-tv" size = {24} color = "white"/>
+				<View>
+					<FeedTab />
+					<FeedTab />
+					<FeedTab />
+				</View>
+				<Ionicons name="search" size={24} color="white"/>
+			</View>
 			<FlatList
 			data = {posts}
 			renderItem = {({item, index}) => (
